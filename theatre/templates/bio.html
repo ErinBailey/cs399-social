@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ actor.first_name }} {{ actor.last_name }}{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'theatre.views.home' %}">Home</a></li>
+    <li><a href="{% url 'theatre.views.information_performance' %}">Performance Information</a></li>
+    <li><a href="{% url 'theatre.views.merchandise' %}">Merchandise</a></li>
+    <li class="active"><a href="#">Upcoming Performances<span class="sr-only">(current)</span></a></li>
+    <li><a href="{% url 'theatre.views.ticket_sales' %}">Ticket Sales</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ actor.first_name }} {{ actor.last_name }}</h1>
+    <p>{{ actor.bio }}</p>
+{% endblock %}

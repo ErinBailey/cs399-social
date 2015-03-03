@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Theatre Project</title>
+{% endblock title %}
+
+{% block navbar %}
+<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+
+<li><a href="{% url 'theatre.views.home' %}">Home</a></li>
+<li><a href="{% url 'theatre.views.information_performance' %}">Performance Information</a></li>
+<li><a href="{% url 'theatre.views.merchandise' %}">Merchandise</a></li>
+<li><a href="{% url 'theatre.views.performances' %}">Upcoming Performances</a></li>
+<li><a href="{% url 'theatre.views.ticket_sales' %}">Ticket Sales</a></li>
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+</head>
+
+<body>
+
+
+<h1> Welcome to the Theatre of Legends!</h1>
+
+</body>
+
+<!-- Carousel Example From Bootstrap -->
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/static/images/downtown-flagstaff-night.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3 style="color: #FFFFFF">Come enjoy a night out in beautiful downtown Flagstaff.</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/static/images/live-comedy.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3 style="color: #FFFFFF">Some of the most prolific artists and comedians come to Legendary Theatre.</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/static/images/mic.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3 style="color: #FFFFFF">Don't miss out!</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="slideshow" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="slideshow" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+
+
+
+ <!-- Example row of columns -->
+      <div class="row-fluid">
+        <div class="span4">
+          <h2>Location</h2>
+          <p>Legendary Theatre is conviently located in gorgeous downtown Flagstaff on the corner of Birch and Leroux. </p>
+          <p><a class="btn" href="https://www.google.com/maps/place/100+W+Birch+Ave,+Flagstaff,+AZ+86001/@35.2002222,-111.6498977">View location &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Venue</h2>
+          <p>Legendary Theatre is an official historic building in Flagstaff.  With gorgeous decor and classic 19th century architecture.  Take a tour through Flagstaff's history and visit our town's other historic buildings.</p>
+          <p><a class="btn" href="http://www.flagstaffarizona.org/about-flagstaff/at-a-glance/historic-buildings/">Historic Buildings &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Shows</h2>
+          <p>Legendary Theatre has an ecclectic selection of shows so there is something for everybody to enjoy!  Come check out our live comedy, movie nights, or classic Broadway plays.</p>
+          <p><a class="btn" href="{% url 'theatre.views.performances' %}">Upcoming Perfomances &raquo;</a></p>
+        </div>
+      </div>
+
+<hr>
+
+  
+    <script>
+      $('.carousel').carousel({
+          interval: 5000
+      })
+  </script>
+
+</html>
+{% endblock %}

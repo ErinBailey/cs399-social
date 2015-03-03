@@ -1,5 +1,5 @@
 """
-Django settings for social project.
+Django settings for theatre project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q_#x=sgdndc%3f2&36#)17)rv1#b5(z)bp6op2l02dahsfqhnf'
+SECRET_KEY = 'i*m7k7$a-7h00q*q-3h(5&*i3na)+w5w31n3v070t(jdk+7$4c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,13 +30,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
+
+   'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social',
+    'theatre',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'social.urls'
+ROOT_URLCONF = 'theatre.urls'
 
-WSGI_APPLICATION = 'social.wsgi.application'
+WSGI_APPLICATION = 'theatre.wsgi.application'
 
 
 # Database
@@ -80,8 +82,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
 STATIC_URL = '/static/'
-STATIC_DIRS = [os.path.join(BASE_DIR,'static')]
 
-TEMPLATES_DIRS = [os.path.join(BASE_DIR,'social/templates')]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+)
+
+
+#Template location
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(BASE_DIR),"theatre", "templates"),
+                  )
+
