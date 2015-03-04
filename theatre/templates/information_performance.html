@@ -1,54 +1,19 @@
+
 {% extends "base.html" %}
 
 {% block title %}
-<title>Performance Information</title>
+<title>My Dreams</title>
 {% endblock title %}
 
 {% block navbar %}
-<li><a href="{% url 'theatre.views.home' %}">Home</a></li>
-<li class="active"><a href="#">Performance Information<span class="sr-only">(current)</span></a></li>
-<li><a href="{% url 'views.merchandise' %}">Merchandise</a></li>
-<li><a href="{% url 'views.performances' %}">Upcoming Performances</a></li>
-<li><a href="{% url 'views.ticket_sales' %}">Ticket Sales</a></li>
 
 {% endblock %}
+
 {% block content %}
 
-<h1>Performance Information</h1>
-
-                    <hr>
-
-                        <!--Image From http://www.hermonchurch.org/mission-improbable/-->
-                    <p style="float: right; padding-right:25px;"><img src="/static/images/mission_improbable.jpg" height="200px" width="200px"  border="10px"></p>
-                    
-                    <h3>Show: Mission Improbable</h3>
-                    <li>Date: March 1, 2015, 5 p.m</li>
-                    <li>Starring: Tim Cruise</li>
-                    <p></p>
-                    <p>Enjoy the BEST live comdey this year with the live play of Mission Improbable. Experience LIVE how An American
-                    agent, under false suspicion of disloyalty, must prove to the world he is innocent in a comedic way you have never experienced before.</p>
-                    <li><a href="{% url 'theatre.views.ticket_sales' %}">Go To Ticket Information</a></li>
-
-                    <hr>
+<h1><center>My Dreams Page here<center></h1>
 
 
-                        <!--Image From http://www.clipartpanda.com/categories/family-clipart-5-people-->
 
-                    <p style="float: right; padding-right:25px;"><img src="/static/images/robots.jpg" height="200px" width="200px"  border="10px"></p>
-                    
-                    <h3>Show: Robots in Disguise</h3>
-                    <li>Date: Feb 15, 2015, 3 p.m</li>
-                    <li>Starring: Malcolm In The Middle</li>
-                    <p></p>
-                    <p>One of the Darkest Dramas of the Year. Experience how Malcolm a very young teen
-                    turns his life around and is able to survive with his dysfuntional family that in reality are ROBOTS in DISGUISE</p>
-                    <li><a href="{% url 'theatre.views.ticket_sales' %}">Go To Ticket Information</a></li>
-
-                    <hr>
-                        
-            <h1><center>CONTACT INFO</center></h1>
-            <p><center>100 W Birch Ave</center></p>
-            <p><center>Flagstaff, AZ 86001</center></p>
-            <p><center>(928) 556-1580</center></p>
 
 {% endblock %}
