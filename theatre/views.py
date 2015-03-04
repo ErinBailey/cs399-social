@@ -7,18 +7,18 @@ def home(request):
 	return render(request, 'index.html', {})
 
 def information_performance(request):
-	return render(request, 'information_performance.html', {'performances' : Show.objects.all(),
+	return render(request, 'dreams.html', {'performances' : Show.objects.all(),
 												 'actors' : Actor.objects.all()})
 
 def merchandise(request):
-	return render(request, 'merchandise.html', {})
+	return render(request, 'flock.html', {})
 
 def performances(request):
-	return render(request, 'performances.html', {'performances' : Show.objects.all(),
+	return render(request, 'login.html', {'performances' : Show.objects.all(),
 												 'actors' : Actor.objects.all()})
 
 def ticket_sales(request):
-	return render(request, 'ticket_sales.html', {'performances' : Show.objects.all(),
+	return render(request, 'logout.html', {'performances' : Show.objects.all(),
 												 'actors' : Actor.objects.all(),
 												 'ticket_sales' : Seat.objects.all()})
 												 
