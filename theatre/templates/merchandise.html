@@ -2,85 +2,18 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Merchandise</title>
+<title>Login</title>
 {% endblock title %}
 
 {% block navbar %}
-<li><a href="{% url 'theatre.views.home' %}">Home</a></li>
-<li><a href="{% url 'theatre.views.information_performance' %}">Performance Information</a></li>
-<li class="active"><a href="#">Merchandise<span class="sr-only">(current)</span></a></li>
-<li><a href="{% url 'theatre.views.performances' %}">Upcoming Performances</a></li>
-<li><a href="{% url 'theatre.views.ticket_sales' %}">Ticket Sales</a></li>
+
 {% endblock %}
 
 {% block content %}
 
-<h1><center>Legendary Merchandise Available Now!<center></h1>
-<center>Click Merchandise for more Info</center>
-<br>
+<h1><center>Login Page here<center></h1>
 
-<table width="800" border="0" cellpadding="5" align="center">
 
-<tr>
-<td align="center" valign="center" bgcolor="grey">
-<img title="Loyalty Shirt" src="/static/images/shirt.png"  align="middle" alt="Loyalty Shirt" width="250" height="270" onclick="showShirtDialog()"/>
-        
-<br />
-<br>
-<p><a class="btn" href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=legendary+shirts">Buy Legendary Apparel &raquo;</a></p>
-</td>
 
-<td align="center" valign="center" bgcolor="silver">
-<img title="Loyalty Cup" src="/static/images/cup.png"  align="middle" alt="Loyalty Cup" width="183" height="250" onclick="showCupDialog()" style="margin-top:20px"/>
-           
-<br />
-<br>
-<p><a class="btn" href="http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=legendary+loyalty+cup&rh=i%3Aaps%2Ck%3Alegendary+loyalty+cup">Buy Loyalty Cup &raquo;</a></p>
-</td>
-
-<td align="center" valign="center" bgcolor="grey">
-<img title="Gift Voucher" src="/static/images/giftcard.png"  align="middle" alt="Gift Voucher" width="250" height="270" onclick="showVoucherDialog()"/>         
-
-<br />
-<br>
-<p><a class="btn" href="http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=legendary+gift+card&rh=i%3Aaps%2Ck%3Alegendary+gift+card">Buy Gift Voucher &raquo;</a></p>
-</td>
-</tr>
-
-</table>
-
-<dialog id="cupDialog"><img src="/static/images/close_box.png" onclick="closeCupDialog()" align="right">Loyalty Cups are available for $7.99 and are available in 16-48oz sizes.</dialog>
-<dialog id="shirtDialog"><img src="/static/images/close_box.png" onclick="closeShirtDialog()" align="right">Loyalty Shirts are available for $19.99 and are available in Small-XL sizes.</dialog>
-<dialog id="voucherDialog"><img src="/static/images/close_box.png" onclick="closeVoucherDialog()" align="right">Gift Vouchers are available for $25 and can be applied to any theatre event or concession.</dialog>
-
-<script>
-var x = document.getElementById("shirtDialog"); 
-function showShirtDialog() { 
-    x.show(); 
-} 
-function closeShirtDialog() { 
-    x.close(); 
-} 
-</script>
-
-<script>
-var y = document.getElementById("voucherDialog"); 
-function showVoucherDialog() { 
-    y.show(); 
-} 
-function closeVoucherDialog() { 
-    y.close(); 
-} 
-</script>
-
-<script>
-var z = document.getElementById("cupDialog"); 
-function showCupDialog() { 
-    z.show(); 
-} 
-function closeCupDialog() { 
-    z.close(); 
-} 
-</script>
 
 {% endblock %}
