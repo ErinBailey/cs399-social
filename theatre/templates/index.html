@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Theatre Project</title>
+<title>Social Network Project</title>
 {% endblock title %}
 
 {% block navbar %}
 <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
 
-<li><a href="{% url 'theatre.views.home' %}">Home</a></li>
-<li><a href="{% url 'theatre.views.information_performance' %}">Performance Information</a></li>
-<li><a href="{% url 'theatre.views.merchandise' %}">Merchandise</a></li>
-<li><a href="{% url 'theatre.views.performances' %}">Upcoming Performances</a></li>
-<li><a href="{% url 'theatre.views.ticket_sales' %}">Ticket Sales</a></li>
+<li><a href="{% url 'social.views.home' %}">Home</a></li>
+<li><a href="{% url 'social.views.information_performance' %}">Performance Information</a></li>
+<li><a href="{% url 'social.views.merchandise' %}">Merchandise</a></li>
+<li><a href="{% url 'social.views.performances' %}">Upcoming Performances</a></li>
+<li><a href="{% url 'social.views.ticket_sales' %}">Ticket Sales</a></li>
 {% endblock %}
 
 {% block content %}
