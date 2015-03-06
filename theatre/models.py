@@ -27,6 +27,15 @@ class Seat(models.Model):
 	
 #Model To describe each movie
 class Information(models.Model):
-        performance_information = models.CharField(max_length=1000)	
+        performance_information = models.CharField(max_length=1000)
+
+
+class User(models.Model):
+    user_name = models.CharField(max_length = 30)
+    user_dream = models.CharField(max_length = 1000)
+    user_flock = models.CharField(max_length = 1000)
+
+    
+    
 
 	
