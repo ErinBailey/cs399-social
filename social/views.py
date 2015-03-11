@@ -23,12 +23,6 @@ def login(request):
 
 def logout(request):
 	return render(request, 'logout.html', {'logout' : Show.objects.all(),
-												 
-
-
-
-
-
 												 })
 ###												 
 ##def bio(request):
