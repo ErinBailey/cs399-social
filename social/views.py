@@ -18,6 +18,9 @@ def dream_info(request):
 def flock_info(request):
 	return render(request, 'flock.html', {})
 
+def about(request):
+	return render(request, 'about.html', {})
+
 def login(request):
 	c = {}
 	c.update(csrf(request))
