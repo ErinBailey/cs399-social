@@ -10,7 +10,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'social.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
+                       
+    url(r'^login/', 'social.views.login_user'),
     url(r'^dreams/', 'social.views.dream_info', name='dreams'),
     url(r'^login/', 'social.views.login', name='login'),
     url(r'^flock/', 'social.views.flock_info', name='flock'),
