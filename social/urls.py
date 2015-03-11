@@ -8,12 +8,12 @@ from django import views
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'theatre.views.home', name='home'),
+    url(r'^$', 'social.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^dreams/', 'theatre.views.dream_info', name='dreams'),
-    url(r'^login/', 'theatre.views.login', name='login'),
-    url(r'^flock/', 'theatre.views.flock_info', name='flock'),
-    url(r'^logout/', 'theatre.views.logout', name='logout'),
+    url(r'^dreams/', 'social.views.dream_info', name='dreams'),
+    url(r'^login/', 'social.views.login', name='login'),
+    url(r'^flock/', 'social.views.flock_info', name='flock'),
+    url(r'^logout/', 'social.views.logout', name='logout'),
     url(r'^admin/', include(admin.site.urls)),
 )  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

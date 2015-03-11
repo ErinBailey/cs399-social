@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from theatre.models import Show, Dream
+from social.models import Show, Dream
 
 
 def home(request):

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from theatre.models import Seat, Actor, Show, Information, User, Dream, Search
+from social.models import Seat, Actor, Show, Information, User, Dream, Search
 
 # Register your models here.
 #class SeatsAdmin(admin.ModelSeats):
