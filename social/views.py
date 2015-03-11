@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from social.models import Show, Dream
+from social.models import User, Dream
 
 
 def home(request):
 	return render(request, 'index.html', {})
 
 def dream_info(request):
-	return render(request, 'dreams.html', {'user_dreams' : Show.objects.all(),
+	return render(request, 'dreams.html', {'user_dreams' : User.objects.all(),
                                                'dreams' : Dream.objects.all()
 												 })
 
@@ -18,17 +18,11 @@ def about(request):
 	return render(request, 'about.html', {})
 
 def login(request):
-	return render(request, 'login.html', {'user_login' : Show.objects.all(),
+	return render(request, 'login.html', {'user_login' : User.objects.all(),
 												 })
 
 def logout(request):
-	return render(request, 'logout.html', {'logout' : Show.objects.all(),
-												 
-
-
-
-
-
+	return render(request, 'logout.html', {'logout' : Dream.objects.all(),
 												 })
 ###												 
 ##def bio(request):
