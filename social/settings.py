@@ -1,5 +1,5 @@
 """
-Django settings for theatre project.
+Django settings for social project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/

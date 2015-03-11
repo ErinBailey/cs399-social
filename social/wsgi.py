@@ -1,5 +1,5 @@
 """
-WSGI config for theatre project.
+WSGI config for social project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
