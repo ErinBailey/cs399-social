@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^dreams/', 'social.views.dream_info', name='dreams'),
     url(r'^login/', 'social.views.login', name='login'),
     url(r'^flock/', 'social.views.flock_info', name='flock'),
+    url(r'^about/', 'social.views.about', name='about'),
     url(r'^logout/', 'social.views.logout', name='logout'),
     url(r'^admin/', include(admin.site.urls)),
 )  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
