@@ -23,6 +23,7 @@ def login(request):
 
 def logout(request):
 	return render(request, 'logout.html', {'logout' : Dream.objects.all(),
+
 												 })
 ###												 
 ##def bio(request):
