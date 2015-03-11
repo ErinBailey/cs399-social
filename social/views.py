@@ -4,14 +4,14 @@ from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 #cross-site request forgery 
-from social.models import Show, Dream
+from social.models import User, Dream
 
 
 def home(request):
 	return render(request, 'index.html', {})
 
 def dream_info(request):
-	return render(request, 'dreams.html', {'user_dreams' : Show.objects.all(),
+	return render(request, 'dreams.html', {'user_dreams' : User.objects.all(),
                                                'dreams' : Dream.objects.all()
 												 })
 
