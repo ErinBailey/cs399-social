@@ -16,8 +16,8 @@ def dream_info(request):
 												 })
 
 def flock_info(request):
-	return render(request, 'flock.html', {'user_dreams' : User.objects.all(),
-                                               'dreams' : Dream.objects.all()})
+	return render(request, 'flock.html', {'user_dreams' : User.objects.all(), 'dreams' : Dream.objects.all(),
+                                               'flocks' : Dream.objects.values('flock').distinct()})
 
 def about(request):
 	return render(request, 'about.html', {})

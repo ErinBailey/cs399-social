@@ -15,8 +15,8 @@
 <p>This page lists dreams by category.</p>
 </center>
 <ul class="list-group">
-    {% if dreams %}
-        {% for dream in dreams %}
+    {% if flocks %}
+        {% for dream in flocks %}
       <li role="presentation"><a href="#">
           {{ dream.flock }} <span class="badge">1</span></a>
       </li>
