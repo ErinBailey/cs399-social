@@ -10,6 +10,21 @@
 
 {% block content %}
 
-<h1><center>My Flock page here<center></h1>
+<center>
+<h1>List of Flocks</h1>
+<p>This list contains various categories that dreams were submitted as.</p>
+</center>
+<ul class="list-group">
+    {% if dreams %}
+        {% for dream in dreams %}
+      <li role="presentation"><a href="#">
+          {{ dream.flock }} <span class="badge">1</span></a>
+      </li>
+        {% endfor %}
+    {% else %}
+        <strong>No flocks exist!</strong>
+    {% endif %}
+</ul>
+
 
 {% endblock %}
