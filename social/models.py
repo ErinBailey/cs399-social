@@ -9,6 +9,7 @@ class User(models.Model):
     username = models.CharField(max_length = 30)
     email = models.EmailField(default = "")
     password = models.CharField(max_length = 30)
+    image = models.ImageField()
 
     
     user_dream = models.CharField(max_length = 1000)
@@ -29,7 +30,7 @@ class UserForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('username',)
+        fields = ('image',)
         
 
 class Dream(models.Model):
