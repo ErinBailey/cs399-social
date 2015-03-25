@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 #cross-site request forgery 
-from social.models import User, Dream
+from social.models import User, Dream, UserForm, UserProfileForm
 
 
 def home(request):
@@ -18,6 +18,7 @@ def dream_info(request):
 def flock_info(request):
 	return render(request, 'flock.html', {'user_dreams' : User.objects.all(), 'dreams' : Dream.objects.all(),
                                                'flocks' : Dream.objects.values('flock').distinct()})
+
 
 def about(request):
 	return render(request, 'about.html', {})
@@ -51,7 +52,42 @@ def logout(request):
 	return render_to_response('logout.html')
 
 
+def register(request):
+        registered = False
+        if request.method == 'POST':
+                user_form = UserForm(data=request.POST)
+                profile_form = UserProfileForm(data=request.POST)
 
+                if user_form.is_valid() and profile_form.is_valid():
+                        user = user_form.save()
+                        user.set_password(user.password)
+                        user.save()
+                        
+                        profile = profile_form.save(commit=False)
+                        profile.user = user
+
+                        if 'picture' in request.FILES:
+                                profile.picture = request.FILES['picture']
+
+                        profile.save()
+
+                        registered = True
+
+                else:
+                        print user_form.errors, profile_form.errors
+
+        else:
+                user_form = UserForm()
+                profile_form = UserProfileForm()
+
+        return render(request,
+                      'register.html',
+                      {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+
+                        
+                        
+
+                
 
 
 
