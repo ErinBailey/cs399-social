@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>MyStupidDreams</title>
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <h1>Register with Rango</h1>
+{% block title %}
+<title>Register Here</title>
+{% endblock title %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+
 
         {% if registered %}
-        Rango says: <strong>thank you for registering!</strong>
+        MyStupidDreams says: <strong>thank you for registering!</strong>
         <a href="/social/">Return to the homepage.</a><br />
         {% else %}
-        Rango says: <strong>register here!</strong><br />
+        New to MyStupidDreams? <strong>Register below!</strong><br />
+	<br>
 
         <form id="user_form" method="post" action="/social/register/"
                 enctype="multipart/form-data">
@@ -28,5 +33,5 @@
             <input type="submit" name="submit" value="Register" />
         </form>
         {% endif %}
-    </body>
-</html>
+
+{% endblock %}
