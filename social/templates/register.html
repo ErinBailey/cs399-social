@@ -13,12 +13,12 @@
 
         {% if registered %}
         MyStupidDreams says: <strong>thank you for registering!</strong>
-        <a href="/login/">Head over to the Login Page.</a><br />
+        <a href="/social/">Return to the homepage.</a><br />
         {% else %}
         New to MyStupidDreams? <strong>Register below!</strong><br />
 	<br>
 
-        <form id="user_form" method="post" action="/register/"
+        <form id="user_form" method="post" action="/social/register/"
                 enctype="multipart/form-data">
 
             {% csrf_token %}
