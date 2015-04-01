@@ -16,9 +16,19 @@
 </center>
 <ul class="list-group">
     {% if flocks %}
-        {% for dream in flocks %}
-      <li role="presentation"><a href="#">
-          {{ dream.flock }} <span class="badge">1</span></a>
+        {% for flock in flocks %}
+      <li role="presentation">
+          {{ flock.flock }}
+          <span class="badge">{{ forloop.counter }}</span></a>
+            <ul class="list-group">
+                {% for dream in dreams %}
+                    {% if dream.flock == flock.flock %}
+                    <li role="presentation">
+                              "{{ dream.content }}" - {{ dream.user.getusername }}
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
       </li>
         {% endfor %}
     {% else %}
