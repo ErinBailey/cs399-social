@@ -25,10 +25,7 @@ def flock_info(request):
 def about(request):
 	return render(request, 'about.html', {})
 
-def login(request):
-	c = {}
-	c.update(csrf(request))
-	return render_to_response('login.html', c)
+
 
 def user_login(request):
 
@@ -55,7 +52,7 @@ def user_login(request):
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
                 login(request, user)
-                return HttpResponseRedirect('/social/')
+                return HttpResponseRedirect('/dreams/')
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your MyStupidDreams account is disabled.")
@@ -69,7 +66,7 @@ def user_login(request):
     else:
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
-        return render(request, 'social/login.html', {})
+        return render(request, 'login.html', {})
 
 												 
 def auth_view(request):
