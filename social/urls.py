@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     url(r'^flock/', 'social.views.flock_info', name='flock'),
     #url(r'^logout/', 'social.views.logout', name='logout'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^register/$', 'social.views.register', name='register'),
-	url(r'^social/register/$', 'social.views.register', name='register'),
+    url(r'^register/', 'social.views.register', name='register'),
+
 
 
     #user auth urls
