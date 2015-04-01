@@ -13,3 +13,6 @@ admin.site.register(Search)
 
 #username: erin
 #password: erin
+
+#username: jack
+#password: jack

@@ -9,7 +9,7 @@ class User(models.Model):
     username = models.CharField(max_length = 30)
     email = models.EmailField(default = "")
     password = models.CharField(max_length = 30)
-    image = models.ImageField()
+    image = models.ImageField(blank = True)
 
     
     user_dream = models.CharField(max_length = 1000)

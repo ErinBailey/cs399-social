@@ -18,10 +18,12 @@ urlpatterns = patterns('',
     #url(r'^logout/', 'social.views.logout', name='logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^register/$', 'social.views.register', name='register'),
+	url(r'^social/register/$', 'social.views.register', name='register'),
 
 
     #user auth urls
     url(r'^login/$', 'social.views.login', name='login'),
+	url(r'^login/auth/$', 'social.views.login', name='login'),
     url(r'^auth/$', 'social.views.auth_view', name='auth_view'),
     url(r'^logout/$', 'social.views.logout', name='logout'),
     url(r'^loggedin/$', 'social.views.loggedin', name='loggedin'),
