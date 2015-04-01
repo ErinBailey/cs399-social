@@ -12,20 +12,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-{% if user.is_authenticated %}
-<h1><center>Welcome, {{ user.username }}!</h1>
-{% else %}
-<h1><center>Welcome. Looks like you need to login!</h1>
-{% endif %}
 </head>
 
 <body>
+ <h1>Dreaming with Friends</h1>
 
 
 <div class="wrapper">
    <img src="static/images/splash.jpg" class="img-responsive" alt="Responsive image">
 </div>
- <h2><center> No account? <a href = "register/">Sign Up Here! </a></h2>
+ <h2> No account? <a href = "register/">Sign Up Here! </a></h2>
 </body>
 </html>
 {% endblock %}
