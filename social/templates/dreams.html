@@ -10,23 +10,17 @@
 
 {% block content %}
 
-<h1><center>My Dreams Page here<center></h1>
-
-<table style="width:50%" style="height:100%" border=1 frame=void rules=rows align="center">
-    <tr>
-    	<th height="50">userName</th>
-    	<th height="50">Title</th>
-    	<th height="50">Content</th>
-    	<th height="50">Flock</th>
-    </tr>
+<h1><center>My Dreams<center></h1>
     {% for dream in dreams %}
-    <tr>
-    	<th height="25">{{ dream.user.getusername }}</th>
-    	<th height="25">{{ dream.title }}</th>
-    	<th height="25">{{ dream.content }}</th>
-    	<th height="25">{{ dream.flock }}</th>
-    </tr>
+<div class="well well-sm">
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">{{ dream.title }} - {{ dream.flock }}</h4>
+    <p>{{ dream.content }}</p>
+    <p>Dreamt by {{ dream.user.getusername }}</p>
+  </div>
+</div>
+</div>
   {% endfor %}
-</table>
 
 {% endblock %}
