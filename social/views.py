@@ -12,10 +12,16 @@ from django import forms
 def home(request):
 	return render(request, 'index.html', {})
 
+
 def dream_info(request):
-	return render(request, 'dreams.html', {'user_dreams' : User.objects.all(),
-                                               'dreams' : Dream.objects.all()
-												 })
+        return render(request, 'dreams.html', {
+                'user_dreams': User.objects.all(),
+                'dreams': Dream.objects.all()})
+
+
+def dreamuser_info(request, usernamen):
+        dreamlist = Dream.objects.all().filter(user__username = usernamen)
+	return render(request, 'dreams.html', {'dreams' : dreamlist})
 
 def flock_info(request):
 	return render(request, 'flock.html', {'user_dreams' : User.objects.all(), 'dreams' : Dream.objects.all(),
