@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 
-{% block context %}
+{% block title %}
+<title>Login Here</title>
+{% endblock title %}
 
-	<h2>Your login details are incorrect!</h2>
-	<p>Click <a href = "login">here</a> to login again</p>
-	
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+	<h1> Oops.. </h1>
+	Your login information was incorrect. Please <a href="/login/">Click Here</a> to try again.
+
+
+ 
+
 {% endblock %}

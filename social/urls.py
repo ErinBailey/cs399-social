@@ -28,5 +28,5 @@ urlpatterns = patterns('',
     #url(r'^auth/$', 'social.views.auth_view', name='auth_view'),
     url(r'^logout/$', 'social.views.logout', name='logout'),
     #url(r'^loggedin/$', 'social.views.loggedin', name='loggedin'),
-    #url(r'^invalid/$', 'social.views.invalid_login', 'invalid_login'),
+    url(r'^invalid_login/$', 'social.views.invalid_login',name='invalid_login'),
 )  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
