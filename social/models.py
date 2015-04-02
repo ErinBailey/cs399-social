@@ -11,10 +11,6 @@ class UserProfile(models.Model):
     password = models.CharField(max_length = 30)
     picture = models.ImageField(upload_to='profile_images', blank=True)
 
-    
-    user_dream = models.CharField(max_length = 1000)
-    user_flock = models.CharField(max_length = 1000)
-
     def __unicode__(self):
         return self.user.username
     def getusername(self):
