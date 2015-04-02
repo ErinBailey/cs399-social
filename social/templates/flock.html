@@ -24,7 +24,7 @@
                 {% for dream in dreams %}
                     {% if dream.flock == flock.flock %}
                     <li role="presentation">
-                              "{{ dream.title }}" - <a href="/dreamuser/{{ dream.user.getusername }}/">{{ dream.user.getusername }}</a>
+                              "<a href="/dreamuser/{{ dream.user.getusername }}/#{{ dream.id }}">{{ dream.title }}</a>" - <a href="/dreamuser/{{ dream.user.getusername }}/">{{ dream.user.getusername }}</a>
                     </li>
                     {% endif %}
                 {% endfor %}
