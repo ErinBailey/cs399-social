@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^about/', 'social.views.about', name='about'),
 
     url(r'^dreams/', 'social.views.dream_info', name='dreams'),
+    url(r'^dreamuser/(?P<usernamen>\w+)/$', 'social.views.dreamuser_info', name='dreamuser'),
    # url(r'^login/', 'social.views.login', name='login'),
     url(r'^flock/', 'social.views.flock_info', name='flock'),
     #url(r'^logout/', 'social.views.logout', name='logout'),
