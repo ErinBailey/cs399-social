@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block nav-store %}class="active"{% endblock %}
+{% block titleBlock %}Imagine Dragons Sweepstakes{% endblock %}
+{% block content %}
+<h3 align="center">
+<form method="POST">
+	{% csrf_token %}
+	<p>Title:</p>
+	<p>{{form2.title}}</p>
+	<p>Content:</p>
+	<p>{{form2.content}}</p>
+	<p>Flock:</p>
+	<p>{{form2.flock}}</p>
+	<p>{{user}}</p>
+	<p>{{form2.user}}</p>
+	<input type="submit" value="Submit"/>
+</form>
+	</h3>
+{% endblock %}
