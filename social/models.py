@@ -35,5 +35,10 @@ class Dream(models.Model):
     user = models.ForeignKey('UserProfile')
     flock = models.CharField(max_length = 32)
 
+class DreamSubmission(forms.ModelForm):
+    class Meta:
+        model = Dream
+        fields = ('title', 'content', 'flock', 'user')
+
 class Search(models.Model):
     dream_search = models.CharField(max_length = 30)

@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate, login
 from django.core.context_processors import csrf
 #cross-site request forgery 
-from social.models import User, Dream, UserForm, UserProfileForm
+from social.models import User, Dream, UserForm, UserProfileForm, DreamSubmission
 from django import forms
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -132,4 +132,20 @@ def register(request):
                       {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
                         
-                        
+
+def submit(request):
+    if request.method == 'POST':
+        form2 = DreamSubmission(request.POST)
+        if form2.is_valid():
+            x = Dream()
+            x.title = form2.cleaned_data["title"]
+            x.content = form2.cleaned_data["content"]
+            x.flock = form2.cleaned_data["flock"]
+            x.user = form2.cleaned_data["user"]
+            x.save()
+            return HttpResponseRedirect("/dreams/")
+    elif request.method == 'GET':
+        form2 = DreamSubmission()
+    else:
+        return HttpResponseRedirect("/404/")
+    return render(request, "submitdream.html", {"form2": form2})
