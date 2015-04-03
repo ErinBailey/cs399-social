@@ -44,6 +44,10 @@ def about(request):
 	return render(request, 'about.html', {})
 
 
+def invalid_login(request):
+    return render(request, 'invalid_login.html', {})
+
+
 def user_login(request):
 
     # If the request is a HTTP POST, try to pull out the relevant information.
@@ -76,7 +80,7 @@ def user_login(request):
         else:
             # Bad login details were provided. So we can't log the user in.
             print("Invalid login details: {0}, {1}".format(username, password))
-            return HttpResponseRedirect("/invalid_login/")
+            return HttpResponseRedirect('/invalid_login/')
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
@@ -84,6 +88,8 @@ def user_login(request):
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
         return render(request, 'login.html', {})
+
+
 
 												 
 def auth_view(request):
