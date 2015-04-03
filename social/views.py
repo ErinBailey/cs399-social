@@ -20,11 +20,6 @@ def user_logout(request):
     return HttpResponseRedirect('/home')
 
 
-@login_required
-def restricted(request):
-        return HttpResponse("Since you're logged in, you can see this text!")
-
-
 def home(request):
 	return render(request, 'index.html', {})
 
@@ -103,15 +98,6 @@ def auth_view(request):
 	else:
 		return HttpResponseRedirect('invalid')
 
-def loggedin(request):
-	return render_to_response('loggedin.html', 
-							 {'full_name': request.user.username})
-
-def invalid_login(request):
-	return render_to_response('invalid_login.html')
-
-
-
 
 def register(request):
         registered = False
@@ -147,15 +133,3 @@ def register(request):
 
                         
                         
-
-                
-
-
-
-
-###												 
-##def bio(request):
-##	actor_id = request.GET.get('id', None)
-##	if not actor_id:
-##		return home(request)
-##	return render(request, 'bio.html', {'actor' : Actor.objects.filter(id=request.GET.get('id')).first()})
