@@ -19,7 +19,6 @@
         {% for flock in flocks %}
       <li role="presentation">
           {{ flock.flock }}
-          <span class="badge">{{ forloop.counter }}</span></a>
             <ul class="list-group">
                 {% for dream in dreams %}
                     {% if dream.flock == flock.flock %}
