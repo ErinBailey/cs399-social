@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     username = models.CharField(max_length = 30)
     email = models.EmailField(default = "")
     password = models.CharField(max_length = 30)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    picture = models.ImageField(upload_to='social/static/profile_images', blank=True)
 
     def __unicode__(self):
         return self.user.username

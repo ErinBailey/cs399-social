@@ -15,6 +15,12 @@
 <a id="{{ dream.id }}"></a>
 <div class="well well-sm">
 <div class="media">
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img src="..{{ dream.user.picture|cut:"social" }}" alt="{{ dream.user.username }}'s profile image">
+      </a>
+    </div>
   <div class="media-body">
     <h4 class="media-heading">{{ dream.title }} - {{ dream.flock }}</h4>
     <p>{{ dream.content }}</p>
