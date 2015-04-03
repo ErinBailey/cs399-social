@@ -132,7 +132,7 @@ def register(request):
                       {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
                         
-
+@login_required
 def submit(request):
     if request.method == 'POST':
         form2 = DreamSubmission(request.POST)
