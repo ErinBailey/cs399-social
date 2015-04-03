@@ -17,7 +17,13 @@ def user_logout(request):
     logout(request)
 
     # Take the user back to the homepage.
-    return HttpResponseRedirect('/about/')
+    return HttpResponseRedirect('/home')
+
+
+@login_required
+def restricted(request):
+        return HttpResponse("Since you're logged in, you can see this text!")
+
 
 def home(request):
 	return render(request, 'index.html', {})
@@ -104,9 +110,7 @@ def loggedin(request):
 def invalid_login(request):
 	return render_to_response('invalid_login.html')
 
-def logout(request):
-	#authenticate.logout(request)
-	return render_to_response('logout.html')
+
 
 
 def register(request):

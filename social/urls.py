@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^register/', 'social.views.register', name='register'),
     url(r'^login/', 'social.views.user_login', name='login'),
+    url(r'^restricted/', 'social.views.restricted', name='restricted'),
     url(r'^logout/$', 'social.views.user_logout', name='logout'),
 
 

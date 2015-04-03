@@ -94,3 +94,5 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR),"social", "templates"),
                   )
 
+
+
