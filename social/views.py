@@ -7,22 +7,33 @@ from django.core.context_processors import csrf
 #cross-site request forgery 
 from social.models import User, Dream, UserForm, UserProfileForm
 from django import forms
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
+
+@login_required
+def user_logout(request):
+    # Since we know the user is logged in, we can now just log them out.
+    logout(request)
+
+    # Take the user back to the homepage.
+    return HttpResponseRedirect('/about/')
 
 def home(request):
 	return render(request, 'index.html', {})
 
-
+@login_required
 def dream_info(request):
         return render(request, 'dreams.html', {
                 'user_dreams': User.objects.all(),
                 'dreams': Dream.objects.all()})
 
-
+@login_required
 def dreamuser_info(request, usernamen):
         dreamlist = Dream.objects.all().filter(user__username = usernamen)
 	return render(request, 'dreams.html', {'dreams' : dreamlist})
 
+@login_required
 def flock_info(request):
 	return render(request, 'flock.html', {'user_dreams' : User.objects.all(), 'dreams' : Dream.objects.all(),
                                                'flocks' : Dream.objects.values('flock').distinct()})
